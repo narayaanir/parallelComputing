@@ -21,7 +21,7 @@ import edu.rit.pj2.Vbl;
 
 public class Element implements Vbl {
 	
-	int i, j, k, l, count;
+	int i, j, k, l;
 	
 	public Element() {
 		this.i=0;
