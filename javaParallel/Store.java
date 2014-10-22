@@ -81,8 +81,7 @@ public class Store extends Tuple implements Vbl {
 	@Override
 	public void writeOut(OutStream x) throws IOException {
 		// TODO Auto-generated method stub
-		for (Long y:al)
-			x.writeLong(y);
+		x.writeObject(al);
 	}
 	
 	/**
@@ -90,11 +89,12 @@ public class Store extends Tuple implements Vbl {
 	 * 
 	 * @param x: Instream object 
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void readIn(InStream x) throws IOException {
 		// TODO Auto-generated method stub
-		Store tx=(Store) x.readObject();
-		al.addAll(tx.al);
+		al=(ArrayList<Long>) x.readObject();
+//		al.addAll(tx.al);
 	}
 
 }

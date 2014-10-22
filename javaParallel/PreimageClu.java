@@ -117,7 +117,7 @@ public class PreimageClu  extends Job  {
 
 		public void main (String[] args) throws Exception {
 			Store master=new Store();
-			Store taskCount;
+			Store taskCount=new Store();
 			Store template=new Store();
 			
 			while ((taskCount=tryToTakeTuple(template))!=null) master.reduce(taskCount);
